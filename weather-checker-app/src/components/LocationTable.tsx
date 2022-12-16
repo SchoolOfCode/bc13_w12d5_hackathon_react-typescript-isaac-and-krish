@@ -25,4 +25,5 @@ function LocationTable({ locations }: LocationTableProps){
     )
 }
 
+export default LocationTable;
   
