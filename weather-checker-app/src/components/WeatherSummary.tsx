@@ -1,14 +1,14 @@
 import { useState,useEffect } from "react";
 import {Weather} from "./Model/Weather";
 import {WeatherEntry }from "./WeatherEntry"
-import WeatherLocation from "./LocationTable"
+import { WeatherLocation } from "./Model/Weather";
+import { readWeather } from "./Services/WeatherService";
 
 interface WeatherSummaryProps {
     location: WeatherLocation | null;
-    readWeather: (location:WeatherLocation)
   }
 
-  function WeatherSummary({location, readWeather}:WeatherSummaryProps){
+  function WeatherSummary({location}:WeatherSummaryProps){
       const [weather, setWeather] = useState<Weather | null>(null);
       useEffect(() => {
       if (location) {

@@ -6,6 +6,7 @@ import LocationSearch from './LocationSearch';
 import LocationTable from "./LocationTable";
 import { searchLocation } from './Services/WeatherService';
 import { WeatherLocation } from './Model/Weather';
+import WeatherSummary from './WeatherSummary';
 
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
   return (
     <div className="container">
     <h1>Weather App</h1>
-
+    
     <LocationSearch onSearch={addLocation}/>
     {
       error
@@ -47,6 +48,7 @@ function App() {
    <LocationTable locations={locations}
                      current={currentLocation}
                      onSelect={location => setCurrentLocation(location)}/>
+                     <WeatherSummary location={currentLocation}/>
   </div>
 );
 }
