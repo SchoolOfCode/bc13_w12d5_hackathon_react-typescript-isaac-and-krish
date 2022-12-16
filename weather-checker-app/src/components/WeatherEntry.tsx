@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import React from "react";
 import {Weather} from "./Model/Weather";
 import {getIconUrl} from "./Services/WeatherService";
 

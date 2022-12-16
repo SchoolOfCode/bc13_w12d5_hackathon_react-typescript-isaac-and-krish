@@ -3,6 +3,7 @@ import {Weather} from "./Model/Weather";
 import {WeatherEntry }from "./WeatherEntry"
 import { WeatherLocation } from "./Model/Weather";
 import { readWeather, readForecast } from "./Services/WeatherService";
+import './WeatherSummary.css';
 
 interface WeatherSummaryProps {
     location: WeatherLocation | null;
@@ -33,7 +34,9 @@ interface WeatherSummaryProps {
 
     <h2>Forecast</h2>
     <div>
-      <ol>
+   
+    <ol style={({whiteSpace: 'nowrap'})}>
+
         {forecast.map(timePoint =>
           <li key={timePoint.dt}>
             <WeatherEntry weather={timePoint}/>
