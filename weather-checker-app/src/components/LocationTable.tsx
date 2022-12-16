@@ -3,8 +3,8 @@ import React  from "react";
 interface LocationTableProps {
     locations: string[];
   }
-  
-function LocationTable({props: LocationTableProps}){
+
+function LocationTable({ locations }: LocationTableProps){
 
     return(
         <div>
@@ -16,12 +16,12 @@ function LocationTable({props: LocationTableProps}){
       </tr>
       </thead>
       <tbody>
-      {props.locations.map((location, index) =>
+      {locations.map((location, index) =>
         <tr key={index}><td>{location}</td></tr>
       )}
       </tbody>
     </table>
-  </div>;
+  </div>
     )
 }
 
